@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulipan - Pastelería & Panadería</title>
+    <link rel="stylesheet" href="/assets/css/contacto.css">
+       </head>
+    <body>
+        <div id="header"></div>
+        <section id="contacto" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="form-container">
+                <div class="success-message" id="successMessage">
+                    ¡Gracias! Hemos recibido tu información. Te contactaremos pronto.
+                </div>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" name="ciudad">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="producto">Producto de Interés</label>
+                        <select id="producto" name="producto">
+                            <option value="">Selecciona un producto</option>
+                            <option value="pasteles">Pasteles Personalizados</option>
+                            <option value="pan">Pan Artesanal</option>
+                            <option value="cupcakes">Cupcakes Gourmet</option>
+                            <option value="croissants">Croissants y Hojaldre</option>
+                            <option value="galletas">Galletas Artesanales</option>
+                            <option value="postres">Postres Especiales</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ocasion">Ocasión Especial</label>
+                        <select id="ocasion" name="ocasion">
+                            <option value="">Selecciona la ocasión</option>
+                            <option value="cumpleanos">Cumpleaños</option>
+                            <option value="boda">Boda</option>
+                            <option value="aniversario">Aniversario</option>
+                            <option value="bautizo">Bautizo</option>
+                            <option value="graduacion">Graduación</option>
+                            <option value="corporativo">Evento Corporativo</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha">Fecha del Evento</label>
+                        <input type="date" id="fecha" name="fecha">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="personas">Número de Personas</label>
+                        <input type="number" id="personas" name="personas" min="1" max="500">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje Adicional</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos más detalles sobre tu pedido..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Quiero recibir ofertas y novedades por correo electrónico</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos">Acepto los términos y condiciones y la política de privacidad *</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem;">Enviar Información</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer id="sobre-nosotros">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre Nosotros</h3>
+                    <p>Tulipan es una pastelería familiar con 2 años de experiencia, dedicada a crear momentos dulces y memorables para nuestros clientes.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Información de Contacto</h3>
+                    <p>📍 Calle 123 #45-67, Centro</p>
+                    <p>📞 (601) 234-5678</p>
+                    <p>✉️ info@dulcehogar.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <p>Lunes a Viernes: 7:00 AM - 8:00 PM</p>
+                    <p>Sábados: 8:00 AM - 9:00 PM</p>
+                    <p>Domingos: 9:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            <p>&copy; 2025 Repostería Tulipan - Pastelería & Panadería. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script>
+        // Smooth scrolling para los enlaces de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Manejo del formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular envío del formulario
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Aquí normalmente enviarías los datos a un servidor
+            console.log('Datos del formulario:', data);
+            
+            // Mostrar mensaje de éxito
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Limpiar formulario
+            this.reset();
+            
+            // Scroll al mensaje de éxito
+            document.getElementById('successMessage').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+            
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+
+        // Botones de "Ordenar Ahora"
+        document.querySelectorAll('.product-card .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productTitle = this.closest('.product-card').querySelector('.product-title').textContent;
+                const productSelect = document.getElementById('producto');
+                
+                // Mapear títulos a valores del select
+                const productMap = {
+                    'Pasteles Personalizados': 'pasteles',
+                    'Pan Artesanal': 'pan',
+                    'Cupcakes Gourmet': 'cupcakes',
+                    'Croissants y Hojaldre': 'croissants',
+                    'Galletas Artesanales': 'galletas',
+                    'Postres Especiales': 'postres'
+                };
+                
+                // Seleccionar el producto en el formulario
+                if (productMap[productTitle]) {
+                    productSelect.value = productMap[productTitle];
+                }
+                
+                // Scroll al formulario
+                document.getElementById('contacto').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Validación en tiempo real
+        document.getElementById('email').addEventListener('blur', function() {
+            const email = this.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                this.style.borderColor = '#ff0000';
+                if (!this.nextElementSibling || !this.nextElementSibling.classList.contains('error-message')) {
+                    const errorMsg = document.createElement('small');
+                    errorMsg.textContent = 'Por favor ingresa un correo electrónico válido';
+                    errorMsg.style.color = '#ff0000';
+                    errorMsg.classList.add('error-message');
+                    this.parentNode.appendChild(errorMsg);
+                }
+            } else {
+                this.style.borderColor = '#ddd';
+                const errorMsg = this.parentNode.querySelector('.error-message');
+                if (errorMsg) {
+                    errorMsg.remove();
+                }
+            }
+        });
+
+        // Validación del teléfono
+        document.getElementById('telefono').addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9\-\+\(\)\s]/g, '');
+        });
+
+        // Animación de entrada para las tarjetas de productos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+     <script src="/assets/js/menu.js"></script>
+    </body>
+    </html>
+
