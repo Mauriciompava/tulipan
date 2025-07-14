@@ -3,18 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="assets/css/estilos.css" />
+        <link rel="stylesheet" href="assets/css/forgetpassword.css">
+        <script src="/assets/js/menu.js"></script>
         <title>Recuperar contraseña</title>
     </head>
 
     <body>
-
-        <header>
-            <div class="container header-content">
-                <div class="logo"><a href="/index.html"><img src="/assets/imagen/tulipan.png" alt="Tulipan"></a>
-                        <h3>Tulipan</h3>
-                </div>     
-            </div>
-        </header>
+        <div id="header"></div>
     <h2>¿Olvidaste tu contraseña?</h2>
     <form action="php/enviar_recuperacion.php" method="POST">
         <input type="email" name="correo" placeholder="Ingresa tu correo registrado" required>
