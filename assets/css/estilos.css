@@ -24,6 +24,9 @@
     color: white;
     padding: 1rem 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    top: 0; /* ← Este es el punto clave */
+  z-index: 1000; /* ← Esto asegura visibilidad encima de todo */
+
   }
   
   .logo {
@@ -63,7 +66,7 @@
     background-position: center;
     color: white;
     text-align: center;
-    padding: 5rem 2rem;
+    padding: 7rem 4rem;
   }
   
   .hero h1 {
@@ -89,6 +92,22 @@
     display: inline-block;
     transition: background 0.3s, transform 0.2s;
     cursor: pointer;
+    
+  }
+  /* cantidad por unidades 21/07/2005*/
+  .cantidad-pastel{
+    background-color: #f3f3f3;
+    color: rgb(26, 26, 26);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    margin-bottom: 10px;
   }
   
   .btn:hover {
@@ -106,7 +125,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-left: 250px;
   }
   
   .producto {
@@ -151,6 +171,7 @@
   color: white;
   text-align: center;
   padding: 2rem 0;
+  margin-bottom: 10px;
 }
 .footer-columns {
   display: grid;
@@ -164,6 +185,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .footer-section h3 {
@@ -197,7 +219,7 @@
 .carrusel {
   position: relative;
   max-width: 100%;
-  margin: 3rem auto;
+  margin: 1rem auto;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -268,5 +290,79 @@
   .prev, .next {
     font-size: 1.5rem;
     padding: 0.4rem 0.8rem;
+  }
+
+  
+}
+/* Nosotros */
+.nosotros {
+  padding: 4rem 1rem;
+  background-color: #fffdfb;
+}
+
+.nosotros-bloque {
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.nosotros h2 {
+  color: #8B4513;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.nosotros p {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.valores-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.valores-lista li {
+  background-color: #fef1e6;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #8B4513;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Animación */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nosotros h2 {
+    font-size: 1.5rem;
+  }
+
+  .nosotros p {
+    font-size: 1rem;
+  }
+
+  .valores-lista {
+    flex-direction: column;
+    align-items: center;
   }
 }
