@@ -24,6 +24,7 @@
     color: white;
     padding: 1rem 0;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
     top: 0; /* ← Este es el punto clave */
   z-index: 1000; /* ← Esto asegura visibilidad encima de todo */
 
@@ -66,7 +67,7 @@
     background-position: center;
     color: white;
     text-align: center;
-    padding: 7rem 4rem;
+    padding: 4rem 2rem;
   }
   
   .hero h1 {
@@ -125,8 +126,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-top: 1rem;
-    margin-left: 250px;
+    margin-top: 2rem;
   }
   
   .producto {
@@ -163,6 +163,13 @@
     color: #ff6347;
     margin: 0 1rem 1rem;
   }
+
+  /*para poner las imagenes de los productos del mismo tamaño*/
+  .card-img-top {
+  height: 250px; /* o el alto que prefieras */
+  object-fit: cover;
+  width: 100%;
+}
   
   /* Pie de página */
  /* Footer */
@@ -171,7 +178,7 @@
   color: white;
   text-align: center;
   padding: 2rem 0;
-  margin-bottom: 10px;
+  margin-bottom: auto;
 }
 .footer-columns {
   display: grid;
@@ -223,6 +230,7 @@
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 .carrusel-container {
@@ -246,6 +254,12 @@
   object-fit: cover;
   border-radius: 12px;
 }
+/* Asegura que las imágenes del carrusel llenen el contenedor sin distorsionarse */
+.carousel-img {
+  width: 100%;
+  height: 500px; /* ajusta según tu diseño */
+  object-fit: cover;
+}
 
 /* Botones de navegación */
 .prev, .next {
@@ -259,7 +273,7 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 50%;
-  z-index: 10;
+  z-index: 5;
   transition: background 0.3s ease;
 }
 
@@ -364,5 +378,109 @@
   .valores-lista {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+/* ========== MENÚ HAMBURGUESA ========== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* ========== RESPONSIVE HEADER ========== */
+@media (max-width: 768px) {
+  .header-content {
+      position: relative;
+  }
+
+  .logo {
+      font-size: 1.2rem;
+  }
+
+  .logo img {
+      height: 45px;
+  }
+
+  /* Mostrar hamburguesa en móvil */
+  .menu-toggle {
+      display: flex;
+  }
+
+  /* Ocultar navegación desktop en móvil */
+  nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #8B4513, #D2691E);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+  }
+
+  nav.active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+  }
+
+  nav ul {
+      flex-direction: column;
+      gap: 0;
+      padding: 1rem 0;
+  }
+
+  nav li {
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav li:last-child {
+      border-bottom: none;
+  }
+
+  nav a {
+      display: block;
+      padding: 1rem 1.5rem;
+      width: 100%;
+  }
+
+  /* Animación hamburguesa cuando está activa */
+  .menu-toggle.active .hamburger:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-toggle.active .hamburger:nth-child(2) {
+      opacity: 0;
+  }
+
+  .menu-toggle.active .hamburger:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 0 1rem;
+  }
+
+  .logo {
+      font-size: 1rem;
+  }
+
+  .logo img {
+      height: 40px;
   }
 }
