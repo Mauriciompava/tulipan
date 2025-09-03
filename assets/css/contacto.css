@@ -237,7 +237,9 @@
             background: #8B4513;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            margin-top: 50px;
+            margin-bottom:  50px
+            padding: 1rem ;
         }
 
         .footer-content {
